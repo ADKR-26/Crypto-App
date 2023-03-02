@@ -11,7 +11,7 @@ function App() {
   useEffect(() => {
     console.log('useEffect');
 
-    axios.get('http://api.coinstats.app/public/v1/coins')
+    axios.get('https://api.coinstats.app/public/v1/coins')
       .then((response => {
         const data = response.data.coins;
         // console.log(data);
