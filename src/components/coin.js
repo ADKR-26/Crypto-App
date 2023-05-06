@@ -1,7 +1,7 @@
 import React from 'react'
 
 function CoinData({name, price, icon, symbol}) {
-    console.log(icon);
+    // console.log(icon);
   return (
     <div className='coin'>
         <h1> Name: {name} </h1>

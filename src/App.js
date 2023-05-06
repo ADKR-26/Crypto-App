@@ -1,7 +1,9 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import axios from 'axios';
 import CoinData from './components/coin';
+import VisitCount from './components/VisitCount';
+import DeviceData from './components/DeviceData';
 
 function App() {
 
@@ -9,7 +11,7 @@ function App() {
   const [searchValue, setSearchValue] = useState('');
 
   useEffect(() => {
-    console.log('useEffect');
+    // console.log('useEffect');
 
     axios.get('https://api.coinstats.app/public/v1/coins')
       .then((response => {
@@ -25,11 +27,13 @@ function App() {
 
   return (
     <div className="App">
+        <DeviceData />
 
       <div className='cryptoHeader'>
         <h1> Crypto App </h1>
         <input type="text" placeholder='Search Here' onChange={(event) => setSearchValue(event.target.value)}/>
       </div>
+        <VisitCount />
 
       <div className='cryptoDisplay'>
 
@@ -42,7 +46,6 @@ function App() {
           />
         })}
       </div>
-
     </div>
   );
 }
